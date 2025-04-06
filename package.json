@@ -9,15 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.0.5",
+    "@react-three/fiber": "^9.0.0-rc.10",
+    "@react-three/postprocessing": "^3.0.4",
+    "@types/three": "^0.175.0",
+    "gsap": "^3.12.7",
+    "lenis": "^1.2.3",
+    "leva": "^0.10.0",
+    "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.2.4"
+    "three": "^0.175.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4"
   }
 }
