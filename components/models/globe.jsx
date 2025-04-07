@@ -36,9 +36,9 @@ function Globe() {
       scrollTrigger: {
         trigger: ".creative__section",
         start: "top center",
-        end: "bottom bottom",
+        end: "top+=150vh",
         scrub: 1,
-        duration: 1,
+        duration: 2,
         ease: "power2.inOut",
         marker: true,
         onUpdate: (self) => {

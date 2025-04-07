@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${titilium.className} antialiased `}
+        className={`${titilium.className} antialiased bg-[#000000]! `}
       >
         {children}
       </body>
