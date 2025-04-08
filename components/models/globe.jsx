@@ -1,8 +1,7 @@
 "use client";
-import { OrbitControls, Stars, useHelper, useTexture } from "@react-three/drei";
+import { Stars, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import * as THREE from "three";
 gsap.registerPlugin(ScrollTrigger);
 import {
   Bloom,
@@ -13,22 +12,18 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 function Globe() {
+  const neutronTexture = useTexture("./assets/2.jpg");
   const starRef = useRef();
   const circleRef = useRef();
   const ballRef = useRef();
 
-  const neutronTexture = useTexture("./assets/2.jpg");
-  //   neutronTexture.repeat.set(1, 1);
+  //   useFrame((state, delta) => {
+  //     if (starRef.current && ballRef.current) {
+  //       starRef.current.rotation.y += delta * 0.02;
 
-  const glowRef = useRef();
-
-  useFrame((state, delta) => {
-    if (starRef.current) {
-      starRef.current.rotation.y += delta * 0.02;
-
-      ballRef.current.rotation.y += delta * 0.2;
-    }
-  });
+  //       ballRef.current.rotation.y -= delta * 0.2;
+  //     }
+  //   }, []);
 
   /*GSAP animation start*/
   useEffect(() => {
@@ -51,6 +46,10 @@ function Globe() {
         },
       },
     });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
   /*GSAP animation end*/
 
@@ -58,7 +57,7 @@ function Globe() {
     <group>
       <ambientLight />
 
-      <Stars count={500} ref={starRef} fade radius={20} />
+      {/* <Stars count={500} ref={starRef} fade radius={20} /> */}
 
       <group ref={circleRef} scale={[1, 1, 0]}>
         <mesh ref={ballRef}>

@@ -3,25 +3,21 @@ import Animation from "@/components/animation/animation";
 import Header from "@/components/header/header";
 import Work from "@/components/landing/work";
 import Globe from "@/components/models/globe";
-
 import { Canvas } from "@react-three/fiber";
-import gsap from "gsap";
 import Lenis from "lenis";
 
-import { useEffect } from "react";
-
 export default function Home() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-  }, []);
+  // useEffect(() => {
+  //   const lenis = new Lenis({
+  //     autoRaf: true,
+  //   });
+  // }, []);
   return (
     <>
       <section className="w-full h-screen relative bg-black">
         <Header />
         <div className="fixed w-full h-full">
-          <Canvas className="w-full fixedh-screen">
+          <Canvas className="w-full h-screen">
             <Globe />
           </Canvas>
         </div>
